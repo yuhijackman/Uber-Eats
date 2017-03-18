@@ -51,6 +51,10 @@ group :development do
   gem 'erb2haml'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'annotate'
