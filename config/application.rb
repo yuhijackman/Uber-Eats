@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module UberEats
   class Application < Rails::Application
     config.generators do |g|
+      g.assets false
       g.helper     false
       g.test_framework false
     end
