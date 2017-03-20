@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -52,3 +52,4 @@ production:
   database: uber-eats_production
   username: root
   password: <%= ENV['UBER_EATS_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
