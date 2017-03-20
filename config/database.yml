@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: uber-eats_production
-  username: uber-eats
+  username: root
   password: <%= ENV['UBER_EATS_DATABASE_PASSWORD'] %>
