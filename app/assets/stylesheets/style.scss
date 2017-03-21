@@ -6,3 +6,173 @@
   padding-left: 40px;
   }
 }
+.contents{
+  .contents__top__container.container{width: auto;}
+  &__top__row{
+    background-color: #EEEEEE;
+    &__info-col{
+      font-size: 50px;
+      margin-top: 20px;
+      // margin-left: 100px;
+      .shop-name{
+        color: green;
+      }
+      .message{
+        margin-top: 30px;
+        color: gray;
+        font-size: 20px;
+      }
+      .description{
+        margin-top: 60px;
+        font-size: 15px;
+      }
+    }
+    &__img-col{
+      .menu-img{
+        width: 590px;
+        height: 600px;
+      }
+    }
+  }
+
+  &__middle__row{
+    margin-top: 70px;
+    margin-bottom: 60px;
+    background-color: white;
+    p{color: gray;}
+    &__shop-list-col{
+      .line-up-img{
+        width: 220px;
+        height: 220px;
+      }
+    }
+    &__delivery-col{
+      .delivery-img{
+        width: 220px;
+        height: 220px;
+      }
+    }
+    &__servise-col{
+      .service-img{
+        width: 220px;
+        height: 220px;
+      }
+    }
+  }
+  &__meal__image{
+    .mexican-food{
+      width: 1439px;
+    }
+  }
+  &__bottom__row{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    &__suggenstion-col{
+      text-align: left;
+      h2{
+        font-size: 50px;
+      }
+      .app-download{
+        font-weight: bold;
+      }
+      .app-store{
+        width: 150px;
+        height: 40%;
+      }
+      .google-play{
+        width: 150px;
+        height: 40%;
+      }
+    }
+    &__iphone-img-col{
+      .iphone-img{
+        height: 600px;
+        transform: rotate( -10deg );
+      }
+    }
+  }
+}
+
+.info-box{
+  background-color: black;
+  height:550px;
+  width: 100%;
+  color: white;
+  &__top{
+    width: 70%;
+    height: 20%;
+    margin: 0 auto;
+    background-color: black;
+    border-bottom: solid 1px gray;
+    &__logo__img{
+      margin-top: 30px;
+      margin-bottom: 10px;
+      width: 200px;
+      height: 75px;
+    }
+  }
+  &__middle{
+    width: 70%;
+    height: 40%;
+    margin: 0 auto;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 40px;
+    border-bottom: solid 1px gray;
+    clear: both;
+    &__left{
+      float: left;
+      margin-top: 30px;
+    }
+    &__center{
+      margin-top: 30px;
+      margin-left: 300px;
+      float: left;
+    }
+    &__right{
+      margin-left: 180px;
+      margin-top: 30px;
+      float: left;
+    }
+  }
+  &__bottom{
+    width: 70%;
+    height: 20%;
+    margin: 0 auto;
+    border-bottom: solid 1px gray;
+    &__app{
+      margin-top: 15px;
+      margin-left: 320px;
+      width: 150px;
+      height: 40%;
+    }
+    &__google{
+      margin-top: 15px;
+      margin-left: 15px;
+      height: 40%;
+      width: 150px;
+    }
+  }
+  &__extra{
+    width: 70%;
+    height: 20%;
+    margin: 0 auto;
+    font-size: 10px;
+    font-weight: lighter;
+    clear: both;
+    &__item__left{
+      float: left;
+      margin-top: 20px;
+      margin-right: 250px;
+    }
+    &__item__center{
+      float: left;
+      margin-top: 20px;
+      margin-right: 250px;
+    }
+    &__item__right{
+      margin-top: 20px;
+      float: left;
+    }
+  }
+}

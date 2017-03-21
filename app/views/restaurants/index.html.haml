@@ -3,4 +3,81 @@
     .logo
       =image_tag "UberEATS-Logo.png", class: "logo__img"
   .contents
+    .contents__top__container.container
+      .contents__top__row.row
+        .contents__top__row__info-col.col-xs-7
+          %p Uberで
+          %p.shop-name サニー ダイナー六本木店 Sunny Diner Roppongi から注文できる
+          %p.message 人気店の料理をすぐにお届け
+          %p.description 住所を入力してください（例：◯◯区☓☓1−2−3）
+        .contents__top__row__img-col.col-xs-5
+          =image_tag "sunny.jpg",class: "menu-img"
+    .contents__middle__container.container
+      .contents__middle__row.row
+        .contents__middle__row__shop-list-col.col-xs-4
+          = image_tag "Photo442542.jpg", class: "line-up-img"
+          %h2 豊富なラインナップ
+          %p 100を超える素敵なレストランのお料理を、UberEATSがお届けします。
+        .contents__middle__row__delivery-col.col-xs-4
+          = image_tag "eta-f1210237e6.gif",class: "delivery-img"
+          %h2 早い配達時間
+          %p UberEATSでは、人気レストランのお料理をお届けします。注文から到着までの所要時間は平均して30分ほどです。
+        .contents__middle__row__servise-col.col-xs-4
+          = image_tag"service-82c873ca0c.png",class: "service-img"
+          %h2 お気に入りのサービス
+          %p 注文内容を選択すると、配達料金を含んだ合計金額が表示されます。 チップは不要です。Uberアカウントにご登録のお支払い情報を利用でき、アプリから注文や配達の状況も確認できます。
+    .contents__meal__image
+      .contents__meal__image__mexican
+        =image_tag "mexican-056397daaf.jpg",class: "mexican-food"
+    .contents__bottom__container.container
+      .contents__bottom__row.row
+        .contents__bottom__row__suggenstion-col.col-xs-8
+          %br
+          %br
+          %h2 お腹が空いたらタップして食事を楽しむだけ
+          %p UberEATSアプリがあれば、
+          %p タップするだけでお気に入りの料理をいつでもお届け
+          %br
+          %br
+          %br
+          %br
+          %br
+          %br
+          %p.app-download アプリをダウンロード
+          %br
+          =link_to image_tag("btn_appstore.png", class: "app-store"),'https://itunes.apple.com/us/genre/ios/id36?mt=8'
+          =link_to image_tag("ja_badge_web_generic-066392843a.png", class: "google-play"),'https://play.google.com/store?hl=en'
+        .contents__bottom__row__iphone-img-col.col-xs-3
+          =image_tag "rsz_1balti_iphone.png", class: "iphone-img"
+  .info-box
+    .info-box__top
+      =image_tag "S__14434311.jpg", class: "info-box__top__logo__img"
+    .info-box__middle
+      .info-box__middle__left
+        %ul
+          %li 日本語
+          %li #UberEats
+          =link_to fa_icon("instagram"),"https://www.instagram.com/"
+          =link_to fa_icon("facebook-official"),"https://www.facebook.com/"
+          =link_to fa_icon("twitter"),"https://twitter.com/?lang=ja"
+      .info-box__middle__center
+        %ul
+          %li UberEATSについて
+          %li 配達パートナーになる
+          %li レストランパートナーになる
+      .info-box__middle__right
+        %ul
+          %li すべての都市を見る
+          %li 料金について
+          %li ヘルプ
+          %li よくあるご質問
+          %li お問い合わせ
+    .info-box__bottom
+      =link_to image_tag("btn_appstore.png", class: "info-box__bottom__app"),'https://itunes.apple.com/us/genre/ios/id36?mt=8'
+      =link_to image_tag("ja_badge_web_generic-066392843a.png", class: "info-box__bottom__google"),'https://play.google.com/store?hl=en'
+    .info-box__extra
+      %ul
+        %li.info-box__extra__item__left © 2016 Uber Technologies Inc.
+        %li.info-box__extra__item__center プライバシー
+        %li.info-box__extra__item__right ご利用規約
 
