@@ -1,0 +1,22 @@
+.account-page__logo
+  =image_tag "ubereats_banner (1).png", class: "account-page__logo__img"
+.account-page__wrapper
+  .account-page__inner
+    .account-page__inner__container.container
+      .account-page__inner__row.row
+        .account-page__inner__col.col-xs-offset-3
+          %h2 サインイン
+          .form-horizontal{:role => "form"}
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field-input.col-xs
+              = f.email_field :email, autofocus: true,placeholder: 'メールアドレス、または携帯電話番号を入力する', class: "form-control"
+            .field-input.col-xs
+              = f.password_field :password, autocomplete: "off",placeholder: 'パスワードを入力してください', class: "form-control"
+            .field-input.col-xs
+              = f.submit "次へ", class: "btn btn-info btn-block"
+%footer.footer
+  .footer__image
+    =image_tag "signup-city-doodle.png", class: "footer__outer__img"
+
+
+

@@ -1,0 +1,60 @@
+.mypage_header
+  .mypage_header_container.container
+    .mypage_header_row.row
+      .mypage_header_left_col.col-xs-4
+        .mypage_header_left_col_promo
+          %ul.list-inline
+            %li Free Rides
+            %li Gifts
+      .mypage_header_center_col.col-xs-4
+        =image_tag "uber.png", class: "black_logo center-block"
+      .mypage_header_right_col.col-xs-4
+        .mypage_header_right_name
+          =image_tag "profile_img.jpeg",class: "img-circle"
+          =current_user.name
+.mypage_content.container
+  .mypage_content.row
+    .mypage_content_left.col-md-3
+      / サイドバーとプロフィール画像
+    .mypage_content_right_details.col-md-6
+      .mypage_content_right_details_row.row
+        .mypage_content_right_details_col.col-md-12
+          %h2.theme Profile
+          %h3.form_content General Infomation
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = devise_error_messages!
+            .form_content_row.row
+              .form_content_col.col-md-12
+                .form-inline
+                  .form-group
+                    = f.label :name
+                    = f.text_field :name, autofocus: true,class: "form-control"
+            .form_content_row.row
+              .form_content_col.col-md-6
+                .form-inline
+                  .form-group
+                    = f.label :email
+                    = f.email_field :email, autofocus: true,class: "form-control"
+                  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                    %div
+                      Currently waiting confirmation for: #{resource.unconfirmed_email}
+              .form_content_col.col-md-6
+                .form-inline
+                  .form-group
+                    = f.label :phone
+                    = f.text_field :phone, autofocus: true,class: "form-control"
+            .form_content_row.row
+              .form_content_col.col-md-5
+                .form-inline
+                  .form-group
+                    = f.label :password
+                    = f.password_field :password, autocomplete: "off",class: "form-control"
+              .form_content_col.col-md-7
+                .form-inline
+                  .form-group
+                    = f.label :password_confirmation
+                    = f.password_field :password_confirmation, autocomplete: "off",class: "form-control"
+            .form_content_row.row
+              .form_content_col.col-md-12
+                %button.btn.btn-primary.btn-block{:type => "submit"} Update Profile
+    .mypage_content_most_right.col-md-3

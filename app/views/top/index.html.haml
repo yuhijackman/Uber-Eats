@@ -16,7 +16,7 @@
               %li
                 %a{:href => "#"} ご注文内容
               %li
-                =link_to 'アカウント',"/users/#{current_user.id}"
+                =link_to 'アカウント', edit_user_registration_path
               %li
                 =link_to 'サインアウト',destroy_user_session_path,method: :delete
           .profile__icon
@@ -29,7 +29,6 @@
           = render partial: 'devise/registrations/new'
           .shopping__icon
             = fa_icon("shopping-bag 2x")
-    .header_search_bar
   .contents
     .contents__top__container.container
       .contents__top__row.row
