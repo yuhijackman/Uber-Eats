@@ -1,19 +1,79 @@
-.logo{
-  border-bottom: solid 1px black;
-&__img{
-  width: 200px;
-  height: 100px;
-  padding-left: 40px;
+.header{
+  &__main__container.container{
+    width: auto;
+    height: 100px;
+    border-bottom: solid 1px black;
+    position: relative;
+  }
+  .logo{
+    &__img{
+      margin-top: 10px;
+      width: 200px;
+      height: 80px;
+    }
+  }
+  &__main__middle__right__col{
+    .fa-shopping-bag{
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+    }
+  }
+  &__main__most__right__col{
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    list-style: none;
+    .header__main__right__message{
+      font-size: 13px;
+      position: absolute;
+      bottom: 40px;
+    }
+    .profile__icon{
+        position: absolute;
+        left: 60%;
+      .img-circle{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  &__main__very__right__col{
+    position: absolute;
+    bottom: 54%;
+    .sign__in__button{
+      position: absolute;
+      margin-top: 3%;
+      color: green;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .btn-success{
+      position: absolute;
+      left: 30%;
+      color: white;
+      margin-left: 15px;
+    }
+    .shopping__icon{
+      margin-left: 70%;
+      position: absolute;
+      top: 8%;
+    }
   }
 }
+
+
+
+
 .contents{
-  .contents__top__container.container{width: auto;}
+  .contents__top__container.container{
+    width: auto;
+  }
   &__top__row{
     background-color: #EEEEEE;
     &__info-col{
       font-size: 50px;
       margin-top: 20px;
-      // margin-left: 100px;
       .shop-name{
         color: green;
       }

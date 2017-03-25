@@ -62,5 +62,7 @@ end
 
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'devise'
+gem 'carrierwave'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'annotate'

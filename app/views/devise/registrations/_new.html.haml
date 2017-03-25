@@ -1,0 +1,36 @@
+#signup.modal.fade{role: "dialog",tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .registration__page__container.container
+        .registration__page__row.row
+          .registration__page__col.col-xs-9
+            %h2.text-left アカウント
+            %p 作成したアカウントは、Uber と UberEATSの両方で使用することができます。
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .field
+                = f.label :name
+                %br/
+                = f.text_field :name, autofocus: true
+              .field
+                = f.label :email
+                %br/
+                = f.email_field :email, autofocus: true
+              .field
+                = f.label :phone
+                %br/
+                = f.text_field :phone, autofocus: true
+              .field
+                = f.label :password
+                - if @minimum_password_length
+                  %em
+                    (#{@minimum_password_length} characters minimum)
+                %br/
+                = f.password_field :password, autocomplete: "off"
+              .field
+                = f.label :password_confirmation
+                %br/
+                = f.password_field :password_confirmation, autocomplete: "off"
+              .actions
+                = f.submit "Sign up"
+            = render "devise/shared/links"
