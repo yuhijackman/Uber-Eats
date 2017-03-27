@@ -1,0 +1,96 @@
+.restaurants__header{
+  width: auto;
+  height: 152px;
+  &__row{
+    border-bottom: solid 2px  #F5F5F5;
+  }
+  &__logo{
+    .header__logo__img{
+      width: 200px;
+      height: 40px;
+      margin-top: 16px;
+    }
+  }
+  &__search{
+    line-height: 72px;
+    text-align: center;
+    font-size: 15px;
+    .fa-map-marker{
+      color: green;
+      margin-right: 5px;
+    }
+  }
+  &__modal__col{
+    line-height: 69px;
+    .dropdown{
+      list-style: none;
+    }
+  }
+  &__message{
+    position: relative;
+  }
+  .img-circle{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 21px;
+      right: 1px;
+  }
+  &__sign__in__col{
+
+    line-height: 69px;
+  }
+  &__shopping__col{
+    line-height: 74px;
+  }
+  &__search__row{
+    position: relative;
+    border-bottom: solid 2px  #F5F5F5;
+    #restaurants__search{
+      width: 80%;
+      margin-top: 25px;
+    }
+  .fa-search{
+    top: 25px;
+    left: 195px;
+    color: green;
+    position: absolute;
+  }
+  .delete__triger{
+    color: gray;
+    position: absolute;
+    right: 260px;
+    bottom: 22px;
+  }
+  }
+}
+
+.restaurants__list{
+  height: auto;
+  &__category__top__row{
+  margin-top: 20px;
+  }
+  &__category__top{
+    height: 58px;
+    font-size: 32px;
+    margin-left: 10px;
+  }
+  &__category__under__line{
+    border-bottom: solid 5px green;
+    margin-left: 30px;
+    width: 80px;
+  }
+  &__contents__col{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
+  .restaurants__list__row{
+    margin-top: 20px;
+  }
+.food__img{
+  width: 346px;
+  height: 217px;
+}
