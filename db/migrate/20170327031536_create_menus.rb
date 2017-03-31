@@ -3,9 +3,9 @@ class CreateMenus < ActiveRecord::Migration[5.0]
     create_table :menus do |t|
       t.string :name, null: false
       t.string :price
+      t.text :detail
       t.text :image
       t.references :restaurant, foreign_key: true
-      t.timestamps
     end
   end
 end
