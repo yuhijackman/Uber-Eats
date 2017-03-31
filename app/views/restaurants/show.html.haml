@@ -1,0 +1,48 @@
+.restaurants__header.container
+  = render partial: "header"
+.restaurant__individual__page__top.container.pull-right
+  .restaurant__individual__page__top__row.row
+    = image_tag(@restaurant.image, class: "individual__img")
+    .restaurant__individual__page__top__col.col-md-5
+      .restaurant__title__box
+        = @restaurant.name
+      .restaurant__genre__box
+        = @restaurant.genre
+.restaurant__menu__list.container
+  .restaurant__menu__list__row.row
+    .restaurant__menu__side__bar__col.col-md-2
+      .restaurant__side__bar__content
+        %ul.side__bar__list
+          %li.business__hours
+            =fa_icon("clock-o")
+            11:00AM - 11:00PM
+          %li Main Menu
+          %li Single
+          %li Beverages
+    .restaurant__menu__list__col.col-md-10
+      - @menus.each do |menu|
+        =link_to do
+          .restaurant__menu__main__info.col-md-5
+            %div(data-menu_id="#{menu.id}" class="menu__content")
+              %ul.menu__list
+                %li.menu__name
+                  = menu.name
+                %li.menu__detail
+                  = menu.detail
+                %li.menu__price
+                  ¥#{ menu.price }
+            .menu__content__image
+              = image_tag(menu.image, class: "menu__list__img") if menu.image
+#menuModal.modal.fade{role: "dialog",:tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      %button.close{"data-dismiss" => "modal", :type => "button"}
+        %span ×
+      .modal-menu__list.container
+        .modal-menu__list__row.row
+          .modal-menu__list__col.col-md-4
+            .modal-menu__list__title
+            .modal-menu__list__detail
+            .modal-footer
+              %button.btn.btn-success.btn-lg.btn-block{:type => "button"} 注文
+= render partial:"footer"

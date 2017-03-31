@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327031536) do
+ActiveRecord::Schema.define(version: 20170330112444) do
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                        null: false
-    t.string   "price"
-    t.text     "image",         limit: 65535
-    t.integer  "restaurant_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string  "name",                        null: false
+    t.string  "price"
+    t.text    "detail",        limit: 65535
+    t.text    "image",         limit: 65535
+    t.integer "restaurant_id"
     t.index ["restaurant_id"], name: "index_menus_on_restaurant_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "menu_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_orders_on_menu_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,4 +61,6 @@ ActiveRecord::Schema.define(version: 20170327031536) do
   end
 
   add_foreign_key "menus", "restaurants"
+  add_foreign_key "orders", "menus"
+  add_foreign_key "orders", "users"
 end

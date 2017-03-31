@@ -7,7 +7,8 @@
             %li Free Rides
             %li Gifts
       .mypage_header_center_col.col-xs-4
-        =image_tag "uber.png", class: "black_logo center-block"
+        =link_to restaurants_path do
+          =image_tag "uber.png", class: "black_logo center-block"
       .mypage_header_right_col.col-xs-4
         .mypage_header_right_name
           =image_tag(current_user.image,class: "img-circle") if current_user.image?
@@ -85,6 +86,7 @@
     .mypage_content_most_right.col-md-3
 .mypage__footer
   .mypage__footer__content
-    =image_tag "account_page1.png", class: "mypage__footer__content__img"
+    =link_to restaurants_path do
+      =image_tag "account_page1.png", class: "mypage__footer__content__img"
 
 

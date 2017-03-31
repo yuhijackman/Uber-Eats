@@ -1,37 +1,5 @@
 .restaurants__header.container
-  .restaurants__header__row.row
-    .restaurants__header__col.col-md-3
-      .restaurants__header__logo
-        =image_tag "ubereatsnew.png", class: "header__logo__img"
-    .restaurants__header__col.col-md-6
-      .restaurants__header__search.center-block
-        =fa_icon("map-marker 2x")
-        Toronto
-    .restaurants__header__col.col-md-3
-      - if user_signed_in?
-        .restaurants__header__modal__col.col-xs-9
-          %li.dropdown
-            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              .restaurants__header__message
-                こんにちは、#{current_user.name}様
-                =image_tag(current_user.image, class: "img-circle")
-            %ul.dropdown-menu
-              %li
-                %a{:href => "#"} ご注文内容
-              %li
-                =link_to 'アカウント', edit_user_registration_path
-              %li
-                =link_to 'サインアウト',destroy_user_session_path,method: :delete
-        .restaurants__header__shopping__col.col-xs-3
-          = fa_icon("shopping-bag 2x")
-      - else
-        .restaurants__header__sign__in__col.col-xs-6.col-md-offset-1
-          = link_to "サインイン",new_user_session_path,class: "sign__in__button"
-          .modal.fade.bs-example-modal-sm2{"aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1"}
-          %a{ "data-target": "#signup", "data-toggle": "modal", type: "button", class: "btn btn-success" } 登録
-        .restaurants__header__shopping__col.col-xs-5
-          = fa_icon("shopping-bag 2x")
-          = render partial: 'devise/registrations/new'
+  = render partial: "header"
   .restaurants__header__search__row.row
     .restaurants__header__search__col.co-md-10.col-md-offset-2
       .form-group
@@ -47,40 +15,6 @@
     .restaurants__list__category__under__line.col-md-12
   .restaurants__list__framework__row.row
     .restaurants__list__framework__col.col-md-12
-      - @restaurants.each do |restaurant|
-        .restaurants__list__contents__col.col-md-4
-          = image_tag(restaurant.image,class: "food__img")
-          = restaurant.name
+      = render partial: "restaurant"
 
-.info-box
-  .info-box__top
-    =image_tag "S__14434311.jpg", class: "info-box__top__logo__img"
-  .info-box__middle
-    .info-box__middle__left
-      %ul
-        %li 日本語
-        %li #UberEats
-        =link_to fa_icon("instagram"),"https://www.instagram.com/"
-        =link_to fa_icon("facebook-official"),"https://www.facebook.com/"
-        =link_to fa_icon("twitter"),"https://twitter.com/?lang=ja"
-    .info-box__middle__center
-      %ul
-        %li UberEATSについて
-        %li 配達パートナーになる
-        %li レストランパートナーになる
-    .info-box__middle__right
-      %ul
-        %li すべての都市を見る
-        %li 料金について
-        %li ヘルプ
-        %li よくあるご質問
-        %li お問い合わせ
-  .info-box__bottom
-    =link_to image_tag("btn_appstore.png", class: "info-box__bottom__app"),'https://itunes.apple.com/us/genre/ios/id36?mt=8'
-    =link_to image_tag("ja_badge_web_generic-066392843a.png", class: "info-box__bottom__google"),'https://play.google.com/store?hl=en'
-  .info-box__extra
-    %ul
-      %li.info-box__extra__item__left © 2016 Uber Technologies Inc.
-      %li.info-box__extra__item__center プライバシー
-      %li.info-box__extra__item__right ご利用規約
-
+= render partial:"footer"

@@ -94,3 +94,94 @@
   width: 346px;
   height: 217px;
 }
+.restaurant__link{
+  text-decoration: none;
+}
+.restaurant__individual__page__top{
+  width: auto;
+  position: relative;
+  bottom: 75px;
+  &__row{
+    .individual__img{
+
+      width:1290px;
+      height:364px;
+    }
+  }
+  &__col{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background-color: black;
+    color: white;
+    width: 400px;
+    height: auto;
+    .restaurant__title__box{
+      margin-top: 20px;
+      font-size: 36px;
+    }
+    .restaurant__genre__box{
+     color: green;
+     margin-bottom: 20px;
+    }
+  }
+}
+
+.restaurant__menu__list{
+  .restaurant__menu__side__bar__col{
+
+  }
+  .restaurant__side__bar__content{
+    background-color: #f5f5f5;
+    .side__bar__list{
+      margin-left: 20px;
+      font-size: 13px;
+      line-height: 50px;
+    }
+  }
+  .restaurant__menu__list__col{
+  
+  }
+  .restaurant__menu__main__info {
+    margin: 0 20px 30px 50px;
+    display: flex;
+    .menu__content{
+      width: 230px;
+      background-color: #f5f5f5;
+      .menu__list{
+        margin-left: 20px;
+      }
+      .menu__name{
+        font-weight: bolder;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .menu__detail{
+        color: gray;
+        margin-bottom: 20px;
+      }
+    }
+    .menu__content__image{
+
+    }
+    .menu__list__img{
+      width: 220px;
+      height: 205px;
+    }
+  }
+}
+.modal-content{
+  height: 100%;
+  .modal-menu__list{
+    margin-left: 30px;
+
+    &__title{
+      text-align: left;
+      font-size: 30px;
+    }
+    &__detail{
+      color: gray;
+      margin-top: 10px;
+    }
+  }
+}
