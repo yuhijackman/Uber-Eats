@@ -86,6 +86,26 @@
         margin-top: 60px;
         font-size: 15px;
       }
+      .fa-search{
+        font-size: 25px;
+        right: 710px;
+        bottom: 88px;
+        color: green;
+        position: absolute;
+      }
+      .search__button{
+        border:none;
+        background:none;
+      }
+      .delete_button{
+        font-size: 25px;
+        color: black;
+        position: absolute;
+        right: 30px;
+        bottom: 85px;
+        border:none;
+        background:none;
+      }
     }
     &__img-col{
       .menu-img{
