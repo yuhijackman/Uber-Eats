@@ -9,7 +9,10 @@ class RestaurantsController < ApplicationController
   end
 
   def search
-    @restaurants = Restaurant.where('name || genre LIKE ?', "%#{params[:keyword]}%")
+    word = params[:keyword]
+    @restaurants = Restaurant.where("name like '%" + word + "%'").or(Restaurant.where("genre like '%" + word + "%'"))
+
+    # @restaurants = Restaurant.including_name_or_genre(word)
   end
 
 end
