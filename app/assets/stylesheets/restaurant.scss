@@ -50,18 +50,27 @@
       width: 80%;
       margin-top: 25px;
     }
-  .fa-search{
-    top: 25px;
-    left: 195px;
-    color: green;
-    position: absolute;
-  }
-  .delete__triger{
-    color: gray;
-    position: absolute;
-    right: 260px;
-    bottom: 22px;
-  }
+
+    .fa-search{
+      bottom: 45px;
+      right: 290px;
+      color: green;
+      position: absolute;
+    }
+    .delete__triger{
+      color: black;
+      position: absolute;
+      right: 260px;
+      bottom: 43px;
+    }
+    .search__button{
+      border:none;
+      background:none;
+    }
+    .delete_button{
+      border:none;
+      background:none;
+    }
   }
 }
 

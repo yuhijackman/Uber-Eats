@@ -8,4 +8,8 @@ class RestaurantsController < ApplicationController
     @menus = @restaurant.menus
   end
 
+  def search
+    @restaurants = Restaurant.where('name || genre LIKE ?', "%#{params[:keyword]}%")
+  end
+
 end
