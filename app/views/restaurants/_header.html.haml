@@ -13,7 +13,7 @@
         %li.dropdown
           %a.dropdown-toggle{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button" }
             .restaurants__header__message
-              こんにちは、#{current_user.name}様
+              お腹空いてる? #{current_user.name}様
               =image_tag(current_user.image, class: "img-circle")
           %ul.dropdown-menu
             %li
