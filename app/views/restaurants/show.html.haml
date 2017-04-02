@@ -13,12 +13,10 @@
     .restaurant__menu__side__bar__col.col-md-2
       .restaurant__side__bar__content
         %ul.side__bar__list
+          %li 営業時間
           %li.business__hours
             =fa_icon("clock-o")
             11:00AM - 11:00PM
-          %li Main Menu
-          %li Single
-          %li Beverages
     .restaurant__menu__list__col.col-md-10
       - @menus.each do |menu|
         =link_to do
