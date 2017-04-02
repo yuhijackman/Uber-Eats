@@ -10,11 +10,11 @@
           = fa_icon("shopping-bag 2x")
         .header__main__most__right__col.pull-right.col-xs-2
           %li.dropdown
-            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            %a.dropdown-toggle{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button" }
               %p.header__main__right__message こんにちは、#{current_user.name}様
             %ul.dropdown-menu
               %li
-                %a{:href => "#"} ご注文内容
+                %a{ href: "#" } ご注文内容
               %li
                 =link_to 'アカウント', edit_user_registration_path
               %li
@@ -23,8 +23,8 @@
             =image_tag"profile_img.jpeg", class: "img-circle"
       - else
         .header__main__very__right__col.pull-right.col-xs-2
-          .modal.fade.bs-example-modal-sm2{"aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1"}
-          = link_to "サインイン",new_user_session_path,class: "sign__in__button"
+          .modal.fade.bs-example-modal-sm2{ "aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1" }
+          = link_to "サインイン",new_user_session_path, class: "sign__in__button"
           %a{ "data-target": "#signup", "data-toggle": "modal", type: "button", class: "btn btn-success" } 登録
           = render partial: 'devise/registrations/new'
           .shopping__icon
@@ -40,11 +40,11 @@
           = form_tag('/restaurants/search', method: :get) do
             .form-group
               .icon-addon.addon-lg
-                %input#location__search.form-control{name:"keyword", placeholder: "レストランを検索", type: "text"}/
-                %button{:type => "submit",class: "search__button"}
+                %input#location__search.form-control{ name: "keyword", placeholder: "レストランを検索", type: "text" }/
+                %button{ type: "submit", class: "search__button" }
                   = fa_icon("search")
               .delete__triger
-                %input{type: "reset", value: "×", class: "delete_button"}
+                %input{ type: "reset", value: "×", class: "delete_button" }
         .contents__top__row__img-col.col-xs-5
           =image_tag "food.gif",class: "menu-img"
     .contents__middle__container.container
@@ -54,16 +54,16 @@
           %h2 豊富なラインナップ
           %p 100を超える素敵なレストランのお料理を、UberEATSがお届けします。
         .contents__middle__row__delivery-col.col-xs-4
-          = image_tag "eta-f1210237e6.gif",class: "delivery-img"
+          = image_tag "eta-f1210237e6.gif", class: "delivery-img"
           %h2 早い配達時間
           %p UberEATSでは、人気レストランのお料理をお届けします。注文から到着までの所要時間は平均して30分ほどです。
         .contents__middle__row__servise-col.col-xs-4
-          = image_tag"service-82c873ca0c.png",class: "service-img"
+          = image_tag"service-82c873ca0c.png", class: "service-img"
           %h2 お気に入りのサービス
           %p 注文内容を選択すると、配達料金を含んだ合計金額が表示されます。 チップは不要です。Uberアカウントにご登録のお支払い情報を利用でき、アプリから注文や配達の状況も確認できます。
     .contents__meal__image
       .contents__meal__image__mexican
-        =image_tag "mexican-056397daaf.jpg",class: "mexican-food"
+        =image_tag "mexican-056397daaf.jpg", class: "mexican-food"
     .contents__bottom__container.container
       .contents__bottom__row.row
         .contents__bottom__row__suggenstion-col.col-xs-8

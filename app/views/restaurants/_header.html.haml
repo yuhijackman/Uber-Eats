@@ -11,13 +11,13 @@
     - if user_signed_in?
       .restaurants__header__modal__col.col-xs-9
         %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %a.dropdown-toggle{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button" }
             .restaurants__header__message
               こんにちは、#{current_user.name}様
               =image_tag(current_user.image, class: "img-circle")
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} ご注文内容
+              %a{ href: "#" } ご注文内容
             %li
               =link_to 'アカウント', edit_user_registration_path
             %li
@@ -27,7 +27,7 @@
     - else
       .restaurants__header__sign__in__col.col-xs-6.col-md-offset-1
         = link_to "サインイン",new_user_session_path,class: "sign__in__button"
-        .modal.fade.bs-example-modal-sm2{"aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1"}
+        .modal.fade.bs-example-modal-sm2{ "aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1" }
         %a{ "data-target": "#signup", "data-toggle": "modal", type: "button", class: "btn btn-success" } 登録
       .restaurants__header__shopping__col.col-xs-5
         = fa_icon("shopping-bag 2x")
