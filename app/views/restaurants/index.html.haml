@@ -5,11 +5,11 @@
       = form_tag('/restaurants/search', method: :get) do
         .form-group
           .icon-addon.addon-lg
-            %input#restaurants__search.form-control{name:"keyword", placeholder: "レストランや料理を検索", type: "text"}
-            %button{:type => "submit",class: "search__button"}
+            %input#restaurants__search.form-control{ name: "keyword", placeholder: "レストランや料理を検索", type: "text" }
+            %button{ type: "submit" , class: "search__button" }
               = fa_icon("search")
           .delete__triger
-            %input{type: "reset", value: "×", class: "delete_button"}
+            %input{ type: "reset", value: "×", class: "delete_button" }
 .restaurants__list.container
   .restaurants__list__category__top__row.row
     .restaurants__list__category__top.col-md-12

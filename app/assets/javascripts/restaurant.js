@@ -10,7 +10,6 @@ $(function() {
     e.preventDefault();
     menu_info = $(this).data('menu_id');
     $('#menuModal').modal();
-    console.log(menu_info)
     $.ajax({
       type: 'GET',
       url: '/menus/search',
@@ -21,7 +20,9 @@ $(function() {
     })
 
     .done(function(data) {
+      var menu = data.id;
       buildHTML(data);
+
     })
 
     .fail(function() {
@@ -29,6 +30,25 @@ $(function() {
     })
 
   });
+
+  $('#order__button').on('click', function(){
+    $.ajax({
+      type: 'POST',
+      url: '/orders',
+      data: {
+        menu_id: menu_info
+      },
+      dataType: 'json'
+    })
+
+    .done(function(){
+      window.location.replace("/restaurants");
+    })
+
+    .fail(function() {
+      alert('error');
+    })
+  })
 });
 
 

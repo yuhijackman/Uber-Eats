@@ -33,10 +33,10 @@
                   ¥#{ menu.price }
             .menu__content__image
               = image_tag(menu.image, class: "menu__list__img") if menu.image
-#menuModal.modal.fade{role: "dialog",:tabindex => "-1"}
+#menuModal.modal.fade{ role: "dialog", tabindex: "-1" }
   .modal-dialog
     .modal-content
-      %button.close{"data-dismiss" => "modal", :type => "button"}
+      %button.close{ "data-dismiss" => "modal", type: "button" }
         %span ×
       .modal-menu__list.container
         .modal-menu__list__row.row
@@ -44,5 +44,5 @@
             .modal-menu__list__title
             .modal-menu__list__detail
             .modal-footer
-              %button.btn.btn-success.btn-lg.btn-block{:type => "button"} 注文
+              %button.btn.btn-success.btn-lg.btn-block{ type: "submit",id: "order__button" } 注文
 = render partial:"footer"
