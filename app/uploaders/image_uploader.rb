@@ -1,6 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
-  storage :file
+  storage :fog
 
   # 保存するディレクトリ名
   def store_dir
