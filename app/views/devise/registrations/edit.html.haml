@@ -8,7 +8,7 @@
             %li Gifts
       .mypage_header_center_col.col-xs-4
         =link_to restaurants_path do
-          =image_tag "uber.png", class: "black_logo center-block"
+          =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/uber.png", class: "black_logo center-block"
       .mypage_header_right_col.col-xs-4
         .mypage_header_right_name
           =image_tag(current_user.image,class: "img-circle") if current_user.image?
@@ -87,6 +87,6 @@
 .mypage__footer
   .mypage__footer__content
     =link_to restaurants_path do
-      =image_tag "account_page1.png", class: "mypage__footer__content__img"
+      =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/account_page1.png", class: "mypage__footer__content__img"
 
 
