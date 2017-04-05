@@ -11,6 +11,10 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @restaurant = @order.menu.restaurant
+    respond_to do |format|
+      format.html
+      format.json { render json: @restaurant }
+    end
   end
 
   private

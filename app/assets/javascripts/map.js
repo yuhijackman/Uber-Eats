@@ -1,7 +1,24 @@
 $(function() {
-    var address = "東京都墨田区押上１−１−２";
-    new google.maps.Geocoder().geocode({'address': address}, callbackRender);
+  var path_name = location.pathname;
+  $.ajax({
+      type: 'GET',
+      url: path_name,
+      dataType: 'json'
+    })
+
+    .done(function(data) {
+      var address = data.address;
+      debugger
+      new google.maps.Geocoder().geocode({'address': address}, callbackRender);
         // Geocoder.geocode 関数に住所とコールバック関数を渡す
+      debugger
+
+    })
+
+    .fail(function() {
+      alert('error');
+    })
+
 });
 
 /**
@@ -25,7 +42,6 @@ function callbackRender(results, status) {
         new google.maps.Marker({map: gmap, position: results[0].geometry.location});
             // 指定の住所から計算した緯度経度の位置に Marker を立てる
 
-        adjustMapSize();
     }
 }
 
