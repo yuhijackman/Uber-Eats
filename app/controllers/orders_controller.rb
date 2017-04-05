@@ -1,11 +1,16 @@
 class OrdersController < ApplicationController
-
   def create
     @order = Order.new(order_params)
     if @order.save
+      redirect_to "/orders/#{@order.id}"
     else
       flash.now[:alert] = '注文に失敗しました'
     end
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    @restaurant = @order.menu.restaurant
   end
 
   private
