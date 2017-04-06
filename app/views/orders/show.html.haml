@@ -1,3 +1,29 @@
 .restaurants__header.container
   = render partial: "/restaurants/header"
-#map-canvas ここに地図が表示されます
+.order.container
+  .order__map__row.row
+    .order__map__col.col-md-12
+      #map-canvas
+  .order__delivery__info__row.row
+    .order__delivery__info__col.col-md-10.col-md-offset-2
+      .order__delivery__status
+        %ul
+          %li.status__sign
+            = fa_icon("cc-amex 3x")
+          %li ご依頼を承りました。
+      .order__delivery__status
+        %ul
+          %li.status__sign
+            = fa_icon("cutlery 3x")
+          %li お料理を準備中です。
+      .order__delivery__status
+        %ul
+          %li.status__sign
+            = fa_icon("car 3x")
+            %li 配達中です。
+      .order__delivery__status3
+        %ul
+          %li.complete__sign
+            = fa_icon("thumbs-up 3x")
+          %li ご注文の商品が到着します。どうぞお召し上がりください。
+
