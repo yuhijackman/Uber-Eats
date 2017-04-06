@@ -41,6 +41,8 @@
           .modal-menu__list__col.col-md-4
             .modal-menu__list__title
             .modal-menu__list__detail
-            .modal-footer
-              %button.btn.btn-success.btn-lg.btn-block{ type: "submit",id: "order__button" } 注文
+            =form_tag( "/orders") do
+              .modal-footer
+              .modal-sender
+                %input{ type: "submit", value: "注文", class: "btn btn-success btn-lg btn-block" }
 = render partial:"footer"

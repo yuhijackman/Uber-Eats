@@ -36,6 +36,7 @@
           %p What are you craving?
           %p.message Get the food you want,
           %p.message From the restaurants you love, Delivered at Uber speed
+          =link_to "レストラン一覧へ","/restaurants",class: "description"
           %p.description 住所を入力してください（例：◯◯区☓☓1−2−3）
           = form_tag('/restaurants/search', method: :get) do
             .form-group
