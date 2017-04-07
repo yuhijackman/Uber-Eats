@@ -20,7 +20,7 @@
               %li
                 =link_to 'サインアウト',destroy_user_session_path,method: :delete
           .profile__icon
-            =image_tag"profile_img.jpeg", class: "img-circle"
+            =image_tag(current_user.image, class: "img-circle")
       - else
         .header__main__very__right__col.pull-right.col-xs-2
           .modal.fade.bs-example-modal-sm2{ "aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1" }
