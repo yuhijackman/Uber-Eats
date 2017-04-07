@@ -1,6 +1,7 @@
 #map-canvas {
   width: 100% ;
   height: 600px ;
+  position: relative;
 }
 .order{
     width: auto;
@@ -11,6 +12,7 @@
     position: relative;
     width: auto;
     height: 260px;
+    margin-top: 40px;
   }
   &__delivery__info__col{
     display: flex;
@@ -30,6 +32,41 @@
     }
     .complete__sign{
       margin: 0 0 20px 150px;
+    }
+  }
+  .driver__info{
+    width: 350px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    bottom: 250px;
+    &__title{
+      color: white;
+      height: 30px;
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 4px;
+    }
+    &__photo{
+        margin-left: 20px;
+        color: white;
+        float: left;
+      }
+      .driver__photo{
+        width: 100px;
+        height: 100px;
+    }
+    &__name{
+      margin-right: 20px;
+      font-size: 20px;
+      color: white;
+      float: right;
+    }
+    &__review{
+      color: white;
+      margin-right: 120px;
+      font-size: 20px;
+      float: right;
     }
   }
 }
