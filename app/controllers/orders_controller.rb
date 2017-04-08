@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @review = Review.new
     @restaurant = @order.menu.restaurant
     respond_to do |format|
       format.html
