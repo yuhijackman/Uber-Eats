@@ -69,4 +69,22 @@
       float: right;
     }
   }
+  .modal__review{
+    margin-top: 72px;
+    padding-right: 300px;
+    &__title{
+      font-size: 20px;
+      margin: 0 auto;
+      .review__title{
+        font-size: 20px;
+        margin: 0 auto;
+        width: 250px;
+      }
+    }
+    &__driver__name{
+      .review__driver__name{
+        font-size: 20px;
+      }
+    }
+  }
 }

@@ -26,15 +26,32 @@
           %li.complete__sign
             = fa_icon("thumbs-up 3x")
           %li ご注文の商品が到着します。どうぞお召し上がりください。
-  =link_to "/restaurants" do
-    .driver__info
-      .driver__info__title
-        Uber Driver
-      .driver__info__photo
-        =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/edit-31630-1416103694-7.jpg", class: "driver__photo"
-      .driver__info__name
-        Name: Travis Kalanick
-      .driver__info__review
+  .driver__info
+    .driver__info__title
+      Uber Driver
+    .driver__info__photo
+      =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/edit-31630-1416103694-7.jpg", class: "driver__photo"
+    .driver__info__name
+      Name: Travis Kalanick
+    .driver__info__review
+      %a{"data-target" => "#exampleModal", "data-toggle" => "modal", :role => "button"}
         Review 4.5
-
-
+      #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog{:role => "document"}
+          .modal__review.container.center-block
+            .modal__review__row.row
+              .modal__review__col.col-md-8
+                .modal__review__title
+                  %h5.review__title ドライバーの評価をしよう
+                .modal__review__driver__name
+                  %h5.review__driver__name ドライバー: Travis Kalanick
+                .modal__review__rate
+                  1
+                .modal__review__form
+                  =form_for @review do |f|
+                    .form-group
+                      =f.label :レビュー
+                      =f.text_area :review,class: "form-control"
+                    .modal__review__footer
+                      =f.submit "レビューを送る", class: "btn btn-success btn-lg btn-block"
+                      %button.btn.btn-success.btn-lg.btn-block{"data-dismiss" => "modal", :type => "button"} 閉じる
