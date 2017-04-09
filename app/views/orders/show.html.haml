@@ -46,16 +46,17 @@
                 .modal__review__title
                   %h5.review__title ドライバーの評価をしよう
                 .modal__review__driver__name
-                  %h5.review__driver__name ドライバー: Travis Kalanick
+                  %h5.review__driver__name 担当ドライバー: Travis Kalanick
                 .modal__review__rate
                 .modal__review__form
                   =form_for @review do |f|
-                    .form-group
-                      =f.label :レビュー
-                      =f.text_area :review,class: "form-control"
-                    .form_group
-                      =f.label :評価
-                      =f.number_field :rate, max: 5, min: 1, class: "rate"
+                    .form__review__place
+                      .form-group
+                        =f.label :レビュー,class: "review__label"
+                        =f.text_area :review,class: "form-control"
+                      .form_group
+                        =f.label :評価,class: "review__label__rate"
+                        =f.number_field :rate, max: 5, min: 1, class: "rate"
                     .modal__review__footer
                       =f.submit "レビューを送る", class: "btn btn-success btn-lg btn-block"
                       %button.btn.btn-success.btn-lg.btn-block{ "data-dismiss" => "modal", type: "button" } 閉じる
