@@ -36,9 +36,9 @@
     .driver__info__review
       Review 4.5
     .driver__info__review__link
-      %a{"data-target" => "#exampleModal", "data-toggle" => "modal", role: "button", class: "review__writer"}
+      %a{"data-target" => "#reviewModal", "data-toggle" => "modal", role: "button", class: "review__writer"}
         レビューを書く
-      #exampleModal.modal.fade{ "aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", role: "dialog", tabindex: "-1" }
+      #reviewModal.modal.fade{ "aria-hidden" => "true", "aria-labelledby" => "reviewModalLabel", role: "dialog", tabindex: "-1" }
         .modal-dialog{ role: "document" }
           .modal__review.container.center-block
             .modal__review__row.row
