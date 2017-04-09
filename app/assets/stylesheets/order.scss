@@ -69,6 +69,15 @@
       float: right;
     }
   }
+  .driver__info__review__link{
+      float: right;
+      margin-right: 100px;
+      .review__writer{
+        color: white;
+        font-size: 17px;
+        line-height: 29px;
+      }
+  }
   .modal__review{
     margin-top: 72px;
     padding-right: 300px;
@@ -85,6 +94,9 @@
       .review__driver__name{
         font-size: 20px;
       }
+    }
+    .rate{
+      color: black;
     }
   }
 }

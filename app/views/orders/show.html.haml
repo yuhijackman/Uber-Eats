@@ -34,10 +34,12 @@
     .driver__info__name
       Name: Travis Kalanick
     .driver__info__review
-      %a{"data-target" => "#exampleModal", "data-toggle" => "modal", :role => "button"}
-        Review 4.5
-      #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
-        .modal-dialog{:role => "document"}
+      Review 4.5
+    .driver__info__review__link
+      %a{"data-target" => "#exampleModal", "data-toggle" => "modal", role: "button", class: "review__writer"}
+        レビューを書く
+      #exampleModal.modal.fade{ "aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", role: "dialog", tabindex: "-1" }
+        .modal-dialog{ role: "document" }
           .modal__review.container.center-block
             .modal__review__row.row
               .modal__review__col.col-md-8
@@ -46,12 +48,14 @@
                 .modal__review__driver__name
                   %h5.review__driver__name ドライバー: Travis Kalanick
                 .modal__review__rate
-                  1
                 .modal__review__form
                   =form_for @review do |f|
                     .form-group
                       =f.label :レビュー
                       =f.text_area :review,class: "form-control"
+                    .form_group
+                      =f.label :評価
+                      =f.number_field :rate, max: 5, min: 1, class: "rate"
                     .modal__review__footer
                       =f.submit "レビューを送る", class: "btn btn-success btn-lg btn-block"
-                      %button.btn.btn-success.btn-lg.btn-block{"data-dismiss" => "modal", :type => "button"} 閉じる
+                      %button.btn.btn-success.btn-lg.btn-block{ "data-dismiss" => "modal", type: "button" } 閉じる
