@@ -18,9 +18,24 @@ class OrdersController < ApplicationController
     end
   end
 
+  def add
+    session[:cart] ||= []
+    cart = Menu.find(params[:menu_id])
+    session[:cart] << cart
+    redirect_to '/restaurants'
+  end
+
+  def cartList
+    respond_to do |format|
+      format.html { redirect_to restaurants_path }
+      format.json { render json: session[:cart] }
+    end
+  end
+
   private
 
   def order_params
     params.permit(:menu_id).merge(user_id: current_user.id)
   end
+
 end
