@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
+
   def create
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to "/orders/#{@order.id}"
-    else
-      flash.now[:alert] = '注文に失敗しました'
+    session[:cart].each do |cart|
+      @order = Order.new(menu_id: cart["id"], user_id: current_user.id)
+      @order.save
     end
+    session.delete(:cart)
+    redirect_to "/orders/#{@order.id}"
   end
 
   def show
@@ -30,12 +31,6 @@ class OrdersController < ApplicationController
       format.html { redirect_to restaurants_path }
       format.json { render json: session[:cart] }
     end
-  end
-
-  private
-
-  def order_params
-    params.permit(:menu_id).merge(user_id: current_user.id)
   end
 
 end
