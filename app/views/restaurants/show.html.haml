@@ -41,8 +41,8 @@
           .modal-menu__list__col.col-md-4
             .modal-menu__list__title
             .modal-menu__list__detail
-            =form_tag( "/orders") do
+            =form_tag( '/orders/add', method: :get) do
               .modal-footer
               .modal-sender
-                %input{ type: "submit", value: "注文", class: "btn btn-success btn-lg btn-block" }
+                =submit_tag( "カートに追加", class: "btn btn-success btn-lg btn-block" )
 = render partial:"footer"
