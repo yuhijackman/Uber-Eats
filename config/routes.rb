@@ -17,7 +17,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:create, :show]
+  resources :orders, only: [:create, :show] do
+    collection do
+      get 'add'
+      get 'cartList'
+    end
+  end
 
   resources :reviews, only: [:create]
 
