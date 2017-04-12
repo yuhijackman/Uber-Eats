@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408030934) do
+ActiveRecord::Schema.define(version: 20170412062326) do
+
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "menu_id"
+    t.integer  "restaurant_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["menu_id"], name: "index_favorites_on_menu_id", using: :btree
+    t.index ["restaurant_id"], name: "index_favorites_on_restaurant_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
+  end
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name",                        null: false
@@ -69,6 +80,9 @@ ActiveRecord::Schema.define(version: 20170408030934) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "favorites", "menus"
+  add_foreign_key "favorites", "restaurants"
+  add_foreign_key "favorites", "users"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "orders", "menus"
   add_foreign_key "orders", "users"
