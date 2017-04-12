@@ -74,7 +74,16 @@
     }
   }
 }
-
+.cart__list{
+  left: -305px;
+  width: 400px;
+  .empty__notice{
+    text-align: center;
+  }
+}
+  .menu-name{
+    font-weight: bolder;
+  }
 .restaurants__list{
   height: auto;
   &__category__top__row{

@@ -23,7 +23,13 @@
             %li
               =link_to 'サインアウト',destroy_user_session_path,method: :delete
       .restaurants__header__shopping__col.col-xs-3
-        = fa_icon("shopping-bag 2x")
+        %a{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button", class: "cart__details"}
+          = fa_icon("shopping-bag 2x")
+        .dropdown-menu.cart__list
+          =form_tag ('/orders') do
+            .cart__list__content.row
+            .cart__list__footer
+              =submit_tag( "注文する", class: "btn btn-success btn-lg btn-block" )
     - else
       .restaurants__header__sign__in__col.col-xs-6.col-md-offset-1
         = link_to "サインイン",new_user_session_path,class: "sign__in__button"

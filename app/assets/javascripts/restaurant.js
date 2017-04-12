@@ -24,11 +24,10 @@ $(function() {
 
     .done(function(data) {
       completeOrder(data);
-
     })
 
     .fail(function() {
-      alert('error');
+      // alert('error');
     })
 
   });
