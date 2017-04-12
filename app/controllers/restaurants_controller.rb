@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    @favorites = Favorite.where(user_id: current_user.id)
   end
 
   def show
