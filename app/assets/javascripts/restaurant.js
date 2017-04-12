@@ -24,7 +24,6 @@ $(function() {
 
     .done(function(data) {
       completeOrder(data);
-
     })
 
     .fail(function() {
