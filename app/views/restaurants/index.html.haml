@@ -10,6 +10,15 @@
               = fa_icon("search")
           .delete__triger
             %input{ type: "reset", value: "×", class: "delete_button" }
+- if @favorites.present?
+  .user__favorites__list.container
+    .user__favorites__list__row.row
+      .user_favorites__list__title.col-md-12
+        .headline__favorites
+          よく注文する商品(いつものをワンクリックで注文)
+        .headline__favorites__under__line
+      .user__favorites__list__col.col-md-12
+        = render partial: "favorite"
 .restaurants__list.container
   .restaurants__list__category__top__row.row
     .restaurants__list__category__top.col-md-12
