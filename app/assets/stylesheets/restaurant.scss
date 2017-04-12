@@ -1,6 +1,6 @@
 .restaurants__header{
   width: auto;
-  height: 152px;
+  height: 170px;
   &__row{
     border-bottom: solid 2px  #F5F5F5;
   }
@@ -84,6 +84,23 @@
   .menu-name{
     font-weight: bolder;
   }
+.user__favorites__list{
+  .headline__favorites{
+    font-size: 32px;
+    margin: 10px;
+  }
+  .headline__favorites__under__line{
+    width: 80px;
+    margin-left: 15px;
+    border-bottom: solid 5px green;
+  }
+  .user__favorites__contents__col{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
 .restaurants__list{
   height: auto;
   &__category__top__row{
