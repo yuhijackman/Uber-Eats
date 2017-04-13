@@ -73,15 +73,7 @@
 #menuModal.modal.fade{ role: "dialog", tabindex: "-1" }
   .modal-dialog
     .modal-content
-      %button.close{ "data-dismiss" => "modal", type: "button" }
-        %span ×
       .modal-menu__list.container
-        .modal-menu__list__row.row
-          .modal-menu__list__col.col-md-4
-            .modal-menu__list__title
-            .modal-menu__list__detail
-            =form_tag( '/orders/add', method: :get) do
-              .modal-footer
-              .modal-sender
-                =submit_tag( "カートに追加", class: "btn btn-success btn-lg btn-block" )
+        =form_tag( '/orders/add', method: :get) do
+          .modal-menu__list__row.row
 = render partial:"footer"
