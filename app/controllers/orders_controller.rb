@@ -4,13 +4,7 @@ class OrdersController < ApplicationController
     session[:cart].each do |cart|
       @order = Order.new(menu_id: cart["id"], user_id: current_user.id)
       @order.save
-      menu_id = cart["id"]
-      user = Order.where(user_id: current_user.id)
-      favorites = user.where(menu_id: menu_id)
-      judge = Favorite.find_by(menu_id: menu_id)
-      if favorites.count > 5 && judge == nil
-        Favorite.create(menu_id: menu_id, restaurant_id: cart["restaurant_id"], user_id: current_user.id)
-      end
+      Order.auto_favorite(@order, current_user.id)
     end
     session.delete(:cart)
     redirect_to "/orders/#{@order.id}"
