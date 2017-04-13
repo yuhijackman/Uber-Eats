@@ -32,9 +32,11 @@
     .driver__info__photo
       =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/edit-31630-1416103694-7.jpg", class: "driver__photo"
     .driver__info__name
-      Name: Travis Kalanick
+      名前: Travis Kalanick
     .driver__info__review
-      Review 4.5
+      評価
+    .driver__info__rate
+      %span{ class: "rating-star rate-#{ Review.average(:rate).to_i.round }0"}
     .driver__info__review__link
       %a{"data-target" => "#reviewModal", "data-toggle" => "modal", role: "button", class: "review__writer"}
         レビューを書く
