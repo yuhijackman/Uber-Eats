@@ -6,25 +6,17 @@ class OrdersController < ApplicationController
       @order.save
       Order.auto_favorite(@order, current_user.id)
     end
+    restaurant_id = session[:cart][0]["restaurant_id"]
     session.delete(:cart)
-    redirect_to "/orders/#{@order.id}"
-  end
-
-  def show
-    @order = Order.find(params[:id])
-    @review = Review.new
-    @restaurant = @order.menu.restaurant
-    respond_to do |format|
-      format.html
-      format.json { render json: @restaurant }
-    end
+    redirect_to "/restaurants/#{restaurant_id}/location"
   end
 
   def add
     session[:cart] ||= []
     cart = Menu.find(params[:menu_id])
     session[:cart] << cart
-    redirect_to '/restaurants'
+    restaurant_id = session[:cart][0]["restaurant_id"]
+    redirect_to "/restaurants/#{restaurant_id}"
   end
 
   def cartList
