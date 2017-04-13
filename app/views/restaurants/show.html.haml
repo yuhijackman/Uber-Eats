@@ -1,5 +1,44 @@
 .restaurants__header.container
-  = render partial: "header"
+  .restaurants__header__row.row
+    .restaurants__header__col.col-md-3
+      .restaurants__header__logo
+        =link_to restaurants_path do
+          =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/ubereatsnew.png", class: "header__logo__img"
+    .restaurants__header__col.col-md-6
+      .restaurants__header__search.center-block
+        =fa_icon("map-marker 2x")
+        Toronto
+    .restaurants__header__col.col-md-3
+      - if user_signed_in?
+        .restaurants__header__modal__col.col-xs-9
+          %li.dropdown
+            %a.dropdown-toggle{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button" }
+              .restaurants__header__message
+                お腹空いてる? #{current_user.name}様
+                =image_tag(current_user.image, class: "img-circle")
+            %ul.dropdown-menu
+              %li
+                %a{ href: "#" } ご注文内容
+              %li
+                =link_to 'アカウント', edit_user_registration_path
+              %li
+                =link_to 'サインアウト',destroy_user_session_path,method: :delete
+        .restaurants__header__shopping__col.col-xs-3
+          %a{ "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", role: "button", class: "cart__details"}
+            = fa_icon("shopping-bag 2x")
+          .dropdown-menu.cart__list
+            =form_tag ('/orders') do
+              .cart__list__content.row
+              .cart__list__footer
+                =submit_tag( "注文する", class: "btn btn-success btn-lg btn-block" )
+      - else
+        .restaurants__header__sign__in__col.col-xs-6.col-md-offset-1
+          = link_to "サインイン",new_user_session_path,class: "sign__in__button"
+          .modal.fade.bs-example-modal-sm2{ "aria-labelledby": "mySmallModalLabel", role: "dialog", tabindex: "-1" }
+          %a{ "data-target": "#signup", "data-toggle": "modal", type: "button", class: "btn btn-success" } 登録
+        .restaurants__header__shopping__col.col-xs-5
+          = fa_icon("shopping-bag 2x")
+          = render partial: 'devise/registrations/new'
 .restaurant__individual__page__top.container.pull-right
   .restaurant__individual__page__top__row.row
     = image_tag(@restaurant.image, class: "individual__img")
