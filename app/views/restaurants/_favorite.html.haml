@@ -2,7 +2,7 @@
   .user__favorites__contents__col.col-md-4
     =form_tag ('/orders') do
       = image_tag(favorite.menu.image,class: "food__img")
-      = favorite.menu.name
+      = favorite.menu.name + " " + "From" + " " + favorite.menu.restaurant.name
       %input{ type: "hidden", name: "menu_id", value: "#{favorite.menu.id}" }
       %input{ type: "hidden", name: "restaurant_id", value: "#{favorite.menu.restaurant.id}" }
       =submit_tag( "One Click", class: "btn btn-success btn-lg btn-block" )
