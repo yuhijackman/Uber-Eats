@@ -1,14 +1,21 @@
 class OrdersController < ApplicationController
 
   def create
-    session[:cart].each do |cart|
-      @order = Order.new(menu_id: cart["id"], user_id: current_user.id)
+    if session[:cart].present?
+      session[:cart].each do |cart|
+        @order = Order.new(menu_id: cart["id"], user_id: current_user.id)
+        @order.save
+        Order.auto_favorite(@order, current_user.id)
+      end
+      restaurant_id = session[:cart][0]["restaurant_id"]
+      session.delete(:cart)
+      redirect_to "/restaurants/#{restaurant_id}/location"
+    else
+      @order = Order.new(menu_id: params[:menu_id], user_id: current_user.id)
       @order.save
       Order.auto_favorite(@order, current_user.id)
+      redirect_to "/restaurants/#{params[:restaurant_id]}/location"
     end
-    restaurant_id = session[:cart][0]["restaurant_id"]
-    session.delete(:cart)
-    redirect_to "/restaurants/#{restaurant_id}/location"
   end
 
   def add
