@@ -36,16 +36,7 @@
           %p What are you craving?
           %p.message Get the food you want,
           %p.message From the restaurants you love, Delivered at Uber speed
-          =link_to "レストラン一覧へ","/restaurants",class: "description"
-          %p.description 住所を入力してください（例：◯◯区☓☓1−2−3）
-          = form_tag('/restaurants/search', method: :get) do
-            .form-group
-              .icon-addon.addon-lg
-                %input#location__search.form-control{ name: "keyword", placeholder: "レストランを検索", type: "text" }/
-                %button{ type: "submit", class: "search__button" }
-                  = fa_icon("search")
-              .delete__triger
-                %input{ type: "reset", value: "×", class: "delete_button" }
+          =link_to "Uberを体験してみる","/restaurants",class: "description"
         .contents__top__row__img-col.col-xs-5
           =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/food.gif",class: "menu-img"
     .contents__middle__container.container
