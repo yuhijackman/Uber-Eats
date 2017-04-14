@@ -14,6 +14,9 @@
               = f.password_field :password, autocomplete: "off",placeholder: 'パスワードを入力してください', class: "form-control"
             .field-input.col-xs
               = f.submit "次へ", class: "btn btn-info btn-block"
+        .account-page__link__col.col-xs-offset-3
+          %a{ "data-target": "#signup", "data-toggle": "modal", type: "button", class: "btn btn-info btn-block" } アカウントを持っていないので、サインアップする。
+          = render partial: 'devise/registrations/new'
 %footer.footer
   .footer__image
     =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/signup-city-doodle.png", class: "footer__outer__img"
