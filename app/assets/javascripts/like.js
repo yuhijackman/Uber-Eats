@@ -17,7 +17,7 @@ $(function() {
 
         .done(function(data){
           $('#like-button').remove();
-          var item = $('<div id= like-button>' + '<i class="fa fa-heart gray">' + '</i>' + data.length + '</div>');
+          var item = $('<div id= like-button>' + '<i class="fa fa-heart gray">' + '</i>' + " " + data.length + '</div>');
           $('.like_heart').append(item)
         })
 
@@ -33,7 +33,7 @@ $(function() {
 
         .done(function(data){
           $('#like-button').remove();
-          var item = $('<div id= like-button>' + '<i class="fa fa-heart red">' + '</i>' + data.length + '</div>');
+          var item = $('<div id= like-button>' + '<i class="fa fa-heart red">' + '</i>' + " " + data.length + '</div>');
           $('.like_heart').append(item)
         })
       }
