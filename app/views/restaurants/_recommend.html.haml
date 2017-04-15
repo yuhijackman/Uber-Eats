@@ -1,0 +1,5 @@
+- @recommends_info.each do |recommend|
+  =link_to(restaurant_path(recommend), class: "restaurant__link") do
+    .restaurants__list__contents__col.col-md-4
+      = image_tag(recommend.image,class: "food__img")
+      = recommend.name
