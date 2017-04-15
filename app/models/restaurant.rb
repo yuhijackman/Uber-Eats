@@ -1,9 +1,13 @@
 class Restaurant < ApplicationRecord
   has_many :menus
   has_many :favorites
+  has_many :likes, dependent: :destroy
   validates :name, presence: true
   scope :including_name_or_genre, ->(word){ where("name like '%" + word + "%'").or(Restaurant.where("genre like '%" + word + "%'")) }
 
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
+  end
   # def self.show_favorites(user_id)
   #   favorites = Favorite.where(user_id: user_id, created_at: 1.week.ago..Time.current)
   #   if favorites.present?
