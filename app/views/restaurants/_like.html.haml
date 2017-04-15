@@ -1,0 +1,8 @@
+- if restaurant.like_user(current_user.id)
+  #like-button.like-img-red
+    = fa_icon("heart", class: "red")
+    = restaurant.likes_count
+- else
+  #like-button
+    = fa_icon("heart", class: "gray")
+    = restaurant.likes_count

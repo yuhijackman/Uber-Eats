@@ -47,6 +47,8 @@
         = @restaurant.name
       .restaurant__genre__box
         = @restaurant.genre
+      .like_heart
+        = render partial: "like", locals: { restaurant: @restaurant }
 .restaurant__menu__list.container
   .restaurant__menu__list__row.row
     .restaurant__menu__side__bar__col.col-md-2

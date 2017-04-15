@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :orders
   has_many :favorites
+  has_many :likes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :image, ImageUploader
