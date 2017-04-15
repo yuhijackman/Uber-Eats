@@ -1,6 +1,7 @@
 class Restaurant < ApplicationRecord
   has_many :menus
   has_many :favorites
+  has_many :users
   has_many :likes, dependent: :destroy
   validates :name, presence: true
   scope :including_name_or_genre, ->(word){ where("name like '%" + word + "%'").or(Restaurant.where("genre like '%" + word + "%'")) }
@@ -8,13 +9,38 @@ class Restaurant < ApplicationRecord
   def like_user(user_id)
    likes.find_by(user_id: user_id)
   end
-  # def self.show_favorites(user_id)
-  #   favorites = Favorite.where(user_id: user_id, created_at: 1.week.ago..Time.current)
-  #   if favorites.present?
-  #     menu_ids = favorites.group(:menu_id).order('count_menu_id DESC').limit(3).count(:menu_id).keys
-  #     @favorites = menu_ids.map{ |id| Favorite.find_by(menu_id: id) }
-  #   else
-  #     @favorites = Favorite.where(user_id: current_user.id).last(3)
-  #   end
-  # end
+
+  def self.show_recommends(current_user, recommends_info)
+    recommends_ids = []
+    other_users_likes = []
+    c_restaurants = []
+    o_restaurants = []
+
+    current_user_likes = current_user.likes
+    current_user_likes.each do |c|
+      item = c.restaurant_id
+      c_restaurants << item
+    end
+
+    users = User.all
+    other_users = users.reject { |u| u.id == current_user.id }
+    other_users.each do |user|
+      other_user_likes = user.likes
+      other_user_likes.each do |o|
+        item = o.restaurant_id
+        o_restaurants <<  item
+      end
+    end
+
+    if c_restaurants & o_restaurants
+      recommend = o_restaurants - c_restaurants
+      recommends_ids += recommend
+    end
+
+    recommends_ids.each do |r|
+      restaurant = Restaurant.find(r)
+      recommends_info << restaurant
+    end
+  end
+
 end
