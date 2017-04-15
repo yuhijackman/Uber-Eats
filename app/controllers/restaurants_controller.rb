@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
   before_action :find_specific_restaurant, only: [:show, :location]
 
   def index
+
     session.delete(:cart)
     @restaurants = Restaurant.all
     favorites = Favorite.where(user_id: current_user.id, created_at: 1.week.ago..Time.current)
@@ -12,6 +13,9 @@ class RestaurantsController < ApplicationController
     else
       @favorites = Favorite.where(user_id: current_user.id).last(3)
     end
+    @recommends_info = []
+    Restaurant.show_recommends(current_user, @recommends_info)
+
   end
 
   def show
@@ -37,5 +41,7 @@ class RestaurantsController < ApplicationController
   def find_specific_restaurant
     @restaurant = Restaurant.find(params[:id])
   end
+
+
 
 end
