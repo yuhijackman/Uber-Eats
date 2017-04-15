@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 20170414111501) do
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
     t.integer  "restaurant_id"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["restaurant_id"], name: "index_likes_on_restaurant_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -91,6 +93,8 @@ ActiveRecord::Schema.define(version: 20170414111501) do
   add_foreign_key "favorites", "menus"
   add_foreign_key "favorites", "restaurants"
   add_foreign_key "favorites", "users"
+  add_foreign_key "likes", "restaurants"
+  add_foreign_key "likes", "users"
   add_foreign_key "menus", "restaurants"
   add_foreign_key "orders", "menus"
   add_foreign_key "orders", "users"
