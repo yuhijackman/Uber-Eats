@@ -78,4 +78,6 @@
       .modal-menu__list.container
         =form_tag( '/orders/add', method: :get) do
           .modal-menu__list__row.row
+        =form_for [@catering] do
+          .modal-menu__list__cataring__row.row
 = render partial:"footer"
