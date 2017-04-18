@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :likes, only: [:create, :destroy]
   resources :dislikes, only: [:create]
+  resources :caterings, only: [:create, :show]
 
   resources :users, only: [:show]
 
