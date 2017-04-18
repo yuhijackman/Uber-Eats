@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
     gon.value = @restaurant.id
     gon.like = @restaurant.like_user(current_user.id)
     @menus = @restaurant.menus
+    @catering = Catering.new
   end
 
   def search
