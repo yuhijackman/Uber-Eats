@@ -37,10 +37,19 @@ class Restaurant < ApplicationRecord
       recommends_ids += recommend
     end
 
+    dislike_restaurants = Dislike.where(user_id: current_user.id)
     recommends_ids.each do |r|
-      restaurant = Restaurant.find(r)
-      recommends_info << restaurant
+      e = []
+      dislike_restaurants.each do |d|
+        not_show = d.restaurant_id
+        if r !=  not_show
+          e << r
+        end
+      end
+      if e.length == dislike_restaurants.length
+        restaurant = Restaurant.find(r)
+        recommends_info << restaurant
+      end
     end
   end
-
 end

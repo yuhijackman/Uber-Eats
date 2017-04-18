@@ -1,5 +1,9 @@
 - @recommends_info.sort_by{rand}.first(3).each do |recommend|
+  / .delete_mark{ id: "delete_mark-#{ recommend.id }" }
   =link_to(restaurant_path(recommend), class: "restaurant__link") do
-    .restaurants__list__contents__col.col-md-4
+    .recommend__list__contents__col.col-md-4{ id: "delete_mark-#{ recommend.id }" }
       = image_tag(recommend.image,class: "food__img")
-      = recommend.name
+      .recommend__name
+        = recommend.name
+        %a(class="delete_mark" id="#{ recommend.id }")
+          =fa_icon("thumbs-o-down")
