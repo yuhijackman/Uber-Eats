@@ -1,5 +1,21 @@
 $(function() {
 
+  $('.delete_mark').on("click", function(){
+    debugger
+    var restaurant_id = this.id
+    var target = '#delete_mark-' + restaurant_id;
+    $(target).remove();
+
+    $.ajax({
+      type: 'POST',
+      url: '/dislikes',
+      data: {
+        restaurant_id: restaurant_id
+      },
+      dataType: 'json'
+    })
+  });
+
   function setModal() {
     $('.modal-menu__list__col').remove();
     var modal = $( '<div class= "modal-menu__list__col col-md-4">'
