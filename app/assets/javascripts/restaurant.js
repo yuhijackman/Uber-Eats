@@ -1,7 +1,6 @@
 $(function() {
 
   $('.delete_mark').on("click", function(){
-    debugger
     var restaurant_id = this.id
     var target = '#delete_mark-' + restaurant_id;
     $(target).remove();
@@ -32,6 +31,25 @@ $(function() {
     $('.modal-menu__list__row').prepend(modal);
   }
 
+  function CateringModal() {
+    $('.modal-menu__list__col').remove();
+    var modal = $( '<div class= "modal-menu__list__col col-md-4">'
+              + '<div class= "modal-menu__list__title">'
+              + '</div>'
+              + '<div class= "modal-menu__list__detail">'
+              + '</div>'
+              + '<div class="modal-footer">'
+              + '</div>'
+              + "配達希望日時を指定してください"
+              + '<input type="datetime-local" name="arrived_at" value="2017-01-01T00:00" class="catering__time">'
+              + '</input>'
+              + '<div class= "modal-sender">'
+              + '<input type="submit" name="commit" value="ケータリングを注文する" class="btn btn-success btn-lg btn-block" data-disable-with="ケータリングを注文する">'
+              + '</div>'
+              + '</div>');
+    $('.modal-menu__list__cataring__row').prepend(modal);
+  }
+
 
   function completeOrder(menu) {
     var name = menu.name;
@@ -57,7 +75,12 @@ $(function() {
     })
 
     .done(function(data) {
+      var status =data.status
+      if(status == 1){
+        CateringModal();
+      }else{
       setModal();
+      }
       completeOrder(data);
     })
 
