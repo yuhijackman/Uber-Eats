@@ -14,6 +14,8 @@ class RestaurantsController < ApplicationController
       menu_ids = favorites.group(:menu_id).order('count_menu_id DESC').limit(3).count(:menu_id).keys
       @favorites = menu_ids.map{ |id| Favorite.find_by(menu_id: id) }
     end
+    @recommends_info = []
+    Restaurant.show_recommends(current_user, @recommends_info)
   end
 
   def show
