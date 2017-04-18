@@ -1,1 +1,40 @@
-ここ
+.restaurants__header.container
+  = render partial: "header"
+  .restaurants__header__search__row.row
+    .restaurants__header__search__col.co-md-10.col-md-offset-2
+      = form_tag('/restaurants/search', method: :get) do
+        .form-group
+          .icon-addon.addon-lg
+            %input#restaurants__search.form-control{ name: "keyword", placeholder: "レストランや料理を検索", type: "text" }
+            %button{ type: "submit" , class: "search__button" }
+              = fa_icon("search")
+          .delete__triger
+            %input{ type: "reset", value: "×", class: "delete_button" }
+- if @favorites.present?
+  .user__favorites__list.container
+    .user__favorites__list__row.row
+      .user_favorites__list__title.col-md-12
+        .headline__favorites
+          よく注文する商品("いつもの"をワンクリックで注文)
+        .headline__favorites__under__line
+      .user__favorites__list__col.col-md-12
+        = render partial: "favorite"
+- if @recommends_info.present?
+  .restaurants__list.container
+    .restaurants__list__category__top__row.row
+      .restaurants__list__category__top.col-md-12
+        #{current_user.name}様に、オススメのレストラン
+      .restaurants__list__category__under__line.col-md-12
+    .restaurants__list__framework__row.row
+      .restaurants__list__framework__col.col-md-12
+        = render partial: "recommend"
+.restaurants__list.container
+  .restaurants__list__category__top__row.row
+    .restaurants__list__category__top.col-md-12
+      レストラン一覧
+    .restaurants__list__category__under__line.col-md-12
+  .restaurants__list__framework__row.row
+    .restaurants__list__framework__col.col-md-12
+      = render partial: "restaurant"
+
+= render partial:"footer"
