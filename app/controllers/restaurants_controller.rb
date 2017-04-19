@@ -4,7 +4,8 @@ class RestaurantsController < ApplicationController
 
   def index
     session.delete(:cart)
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(status: 0)
+    @caterings = Restaurant.where(status: 1)
     favorites = Favorite.where(user_id: current_user.id, created_at: 1.week.ago..Time.current)
     if favorites.present?
       menu_ids = favorites.group(:menu_id).order('count_menu_id DESC').limit(3).count(:menu_id).keys

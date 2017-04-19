@@ -1,0 +1,5 @@
+- @caterings.each do |catering|
+  =link_to(restaurant_path(catering), class: "restaurant__link") do
+    .restaurants__list__contents__col.col-md-4
+      = image_tag(catering.image,class: "food__img")
+      = catering.name

@@ -1,0 +1,42 @@
+.catering__complete__page{
+  text-align: center;
+  margin-top: 40px;
+    font-weight: bolder;
+  &__title{
+    font-size: 20px;
+  }
+  &__detail__title{
+    font-size: 18px;
+    margin: 20px 40px 30px 0;
+  }
+  &__detail__content{
+     margin: 20px 40px 20px 0;
+  }
+  .catering__user__name__title{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .catering__user__name{
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .catering__user__item__title{
+     font-size: 18px;
+     margin-bottom: 10px;
+  }
+  .catering__item_name{
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .catering__delivery__time{
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .catering__delivery__time__title{
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .catering__message{
+
+  }
+}

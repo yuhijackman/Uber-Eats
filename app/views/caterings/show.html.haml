@@ -1,0 +1,31 @@
+.account-page__logo
+  =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/ubereats_banner+(1).png", class: "account-page__logo__img"
+.catering__complete__page.container
+  .catering__complete__page__row.row
+    .catering__complete__page__col.col-md-6.col-md-offset-3
+      .catering__complete__page__title
+        ケータリングの注文が完了しました。
+      .catering__complete__page__detail__title
+        ご注文内容
+      %ul.catering__complete__page__detail__content
+        %li.catering__user__name__title
+          受け取り者氏名
+        %li.catering__user__name
+          = @user.name
+        %li.catering__user__item__title
+          商品名
+        %li.catering__item_name
+          = @menu.name
+        %li.catering__delivery__time__title
+          配達予定時刻
+        %li.catering__delivery__time
+          = @catering.arrived_at
+        %li.catering__message
+          上記のお時間にドライバーTravis Kalanickが配達いたします。
+        =link_to "トップページに戻る", root_path
+%footer.footer
+  .footer__image
+    =image_tag "https://s3-ap-northeast-1.amazonaws.com/jawsome/uploads/restaurant/image/signup-city-doodle.png", class: "footer__outer__img"
+
+
+
