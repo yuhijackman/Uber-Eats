@@ -2,7 +2,9 @@ class CateringsController < ApplicationController
 
   def create
     @catering = Catering.new(catering_params)
+    @user = current_user
     if @catering.save
+      NoticeMailer.sendmail_confirm(@user, @catering).deliver
       redirect_to "/caterings/#{@catering.id}"
     else
       flash.now[:alert] = '配達日時を指定して下さい'
