@@ -36,5 +36,13 @@
   .restaurants__list__framework__row.row
     .restaurants__list__framework__col.col-md-12
       = render partial: "restaurant"
+.restaurants__list.container
+  .restaurants__list__category__top__row.row
+    .restaurants__list__category__top.col-md-12
+      ケータリング注文可能なレストラン一覧
+    .restaurants__list__category__under__line.col-md-12
+  .restaurants__list__framework__row.row
+    .restaurants__list__framework__col.col-md-12
+      = render partial: "/caterings/catering"
 
 = render partial:"footer"
