@@ -19,6 +19,6 @@ class CateringsController < ApplicationController
   private
 
   def catering_params
-    params.permit(:menu_id, :arrived_at).merge(user_id: current_user.id)
+    params.permit(:menu_id, :arrived_at, :address).merge(user_id: current_user.id)
   end
 end
