@@ -1,7 +1,6 @@
 class CateringsController < ApplicationController
 
   def create
-    binding.pry
     @catering = Catering.new(catering_params)
     if @catering.save
       redirect_to "/caterings/#{@catering.id}"
@@ -11,7 +10,9 @@ class CateringsController < ApplicationController
   end
 
   def show
-    
+    @catering = Catering.find(params[:id])
+    @user = @catering.user
+    @menu = @catering.menu
   end
 
 
