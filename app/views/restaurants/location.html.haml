@@ -26,6 +26,11 @@
           %li.complete__sign
             = fa_icon("thumbs-up 3x")
           %li ご注文の商品が到着します。どうぞお召し上がりください。
+  .delivery__duration__time
+    .delivery__duration__time__title
+      お料理到着まで
+    .delivery__duration__time__timer
+      #timer
   .driver__info
     .driver__info__title
       Uber Driver
@@ -62,3 +67,4 @@
                     .modal__review__footer
                       =f.submit "レビューを送る", class: "btn btn-success btn-lg btn-block"
                       %button.btn.btn-success.btn-lg.btn-block{ "data-dismiss" => "modal", type: "button" } 閉じる
+

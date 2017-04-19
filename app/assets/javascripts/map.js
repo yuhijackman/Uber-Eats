@@ -24,7 +24,7 @@ $(function() {
   var infoWindow;
       if(status == google.maps.GeocoderStatus.OK) {
           var options = {
-              zoom: 18,
+              zoom: 16,
               center: results[0].geometry.location, // 指定の住所から計算した緯度経度を指定する
               mapTypeId: google.maps.MapTypeId.ROADMAP // 「地図」で GoogleMap を出力する
           };
@@ -59,7 +59,6 @@ $(function() {
       navigator.geolocation.getCurrentPosition(function(position) {
           // 緯度経度の取得
           latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          markerData.unshift(latLng);
           // マーカーの追加
           currentMarker = new google.maps.Marker({
               position: latLng,
@@ -72,15 +71,15 @@ $(function() {
         infoWindow.open(gmap, currentMarker);
       });
       getTime();
+      ShowRoute();
       }, function() {
           alert('位置情報取得に失敗しました');
       });
-      
-    
+
+
   }
 
   function getTime() {
-    debugger
     google.maps.geometry.spherical.computeDistanceBetween (latLng, restaurant);
      navigator.geolocation.getCurrentPosition(function(position) {
        var currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -117,17 +116,54 @@ $(function() {
           for (var j = 0; j<results.length; j++) {
             var from = origins[i]; // 出発地点の住所
             var to = destinations[j]; // 到着地点の住所
-            var duration = results[j].duration.value; // 時間
-            var distance = results[j].distance.value; // 距離
-            console.log("{},{},{},{}", from,  to, duration, distance);
+            var duration = results[j].duration_in_traffic.text; // 時間
+            var timer = parseInt(duration);
+            countdown(timer);
           }
         }
       }
     });
   }
+
+  function ShowRoute() {
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+        map: gmap, // 対象のGoogleMapsを指定
+        suppressMarkers: true
+    });
+    var directionsService = new google.maps.DirectionsService();
+    var request = {
+        origin: restaurant, // スタート地点：富士山
+        destination: latLng, // ゴール地点：東京
+        travelMode: google.maps.TravelMode.DRIVING // 移動手段：徒歩
+    };
+    directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        }
+    });
+  }
+
+  function countdown(minutes) {
+      var seconds = 60;
+      var mins = minutes
+      function tick() {
+          var counter = document.getElementById("timer");
+          var current_minutes = mins-1
+          seconds--;
+          counter.innerHTML =
+          current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+          if( seconds > 0 ) {
+              timeoutHandle=setTimeout(tick, 1000);
+          } else {
+
+              if(mins > 1){
+
+                 // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                 setTimeout(function () { countdown(mins - 1); }, 1000);
+
+              }
+          }
+      }
+      tick();
+  }
 });
-
-
-
-
-

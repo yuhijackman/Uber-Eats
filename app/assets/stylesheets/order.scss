@@ -105,4 +105,28 @@
       }
     }
   }
+  .delivery__duration__time{
+    background-color: black;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 500px;
+    left: 365px;
+    border-left: solid 1px green;
+    &__title{
+      margin-bottom: 10px;
+      width: 300px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+    }
+    &__timer{
+      width: 300px;
+      font-size: 60px;
+      color: white;
+      text-align: center;
+
+    }
+  }
+
 }
