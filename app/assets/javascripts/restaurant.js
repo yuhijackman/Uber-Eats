@@ -40,7 +40,16 @@ $(function() {
               + '</div>'
               + '<div class="modal-footer">'
               + '</div>'
+              + '<div class="field">'
+              + '<label for="address">'
+              + "配達先住所を指定"
+              + '</label>'
+              + '<br>'
+              + '<input autofocus="autofocus" type="text" name= "address" id="address">'
+              + '</div>'
+              + '<label for="arrived_at">'
               + "配達希望日時を指定してください"
+              + '</label>'
               + '<input type="datetime-local" name="arrived_at" value="2017-01-01T00:00" class="catering__time">'
               + '</input>'
               + '<div class= "modal-sender">'
