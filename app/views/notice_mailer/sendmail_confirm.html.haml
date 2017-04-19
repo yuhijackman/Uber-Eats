@@ -1,0 +1,20 @@
+%h2
+  = @name
+  様
+%p
+  この度はUber Eatsをご利用いただきありがとうございます。
+%p
+  ケータリングのご注文を受け取りました。
+%br
+%h3
+  注文内容
+%ul.mail__content
+  %li 商品名: #{@item}
+  %li お支払い金額: #{@price} 円
+  %li お届け日時: #{@time.strftime("%Y年%m月%d日 %H時%M分")}
+  %li お届け先: #{@address}
+%p
+  ご指定いただきました日時に、ドライバーTravis Kalanickが配達いたします。
+%br
+%p
+  ご不明な点がございましたら、<a href="https://help.uber.com/ja_JP/h/d18a8516-9bf1-44ee-97aa-3e149b2ace3f">カスタマーサポート</a>にご連絡ください。
