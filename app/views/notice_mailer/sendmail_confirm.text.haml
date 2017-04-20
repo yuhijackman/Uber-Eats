@@ -1,9 +1,11 @@
-NoticeMailer#sendmail_confirm
-
-= @name様
-
+#{@name}様
 #{@message}
-
-今後とも宜しくお願い致します。
-
+注文内容
+商品名: #{@item}
+お支払い金額: #{@price} 円
+お届け日時: #{@time.strftime("%Y年%m月%d日 %H時%M分")}
+お届け先: #{@address}
+この度は、Uber Eats Cateringサービスをご利用いただきありがとうございました。
+#{@item}と共に楽しいひと時をお過ごしください。
+カスタマーサービス: 090-1111-1111
 Uber Eats
