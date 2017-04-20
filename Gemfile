@@ -68,3 +68,5 @@ gem 'fog'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'gon'
 gem 'annotate'
+gem 'whenever', require: false
+
