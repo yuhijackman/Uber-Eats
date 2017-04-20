@@ -1,5 +1,10 @@
 $(function() {
-
+   var n = window.location.href.slice(window.location.href.indexOf('?') + 4);
+    if(n.length < $("#catering div").size()) {
+        var p = $("#catering div").eq(n).offset().top;
+        $('html,body').animate({ scrollTop: p }, 'slow');
+        return false;
+    }
   $('.delete_mark').on("click", function(){
     var restaurant_id = this.id
     var target = '#delete_mark-' + restaurant_id;
