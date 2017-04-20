@@ -33,6 +33,25 @@ $(function() {
 
   function CateringModal() {
     $('.modal-menu__list__col').remove();
+    var current_time = new Date();
+    var year    = current_time.getFullYear();
+    var month    = current_time.getMonth() + 1;
+    var day     = current_time.getDate();
+    var hours   = current_time.getHours();
+    var minutes = current_time.getMinutes();
+    var toTargetDigits = function (num, digits) {
+      num += ''
+      while (num.length < digits) {
+        num = '0' + num
+      }
+      return num
+    }
+    var yyyy = toTargetDigits(year, 4)
+    var mm = toTargetDigits(month, 2)
+    var dd = toTargetDigits(day, 2)
+    var hh = toTargetDigits(hours, 2)
+    var mt = toTargetDigits(minutes, 2)
+    var time = (yyyy+'-'+mm+'-'+dd+'T'+hh+':'+mt)
     var modal = $( '<div class= "modal-menu__list__col col-md-4">'
               + '<div class= "modal-menu__list__title">'
               + '</div>'
@@ -50,7 +69,7 @@ $(function() {
               + '<label for="arrived_at">'
               + "配達希望日時を指定してください"
               + '</label>'
-              + '<input type="datetime-local" name="arrived_at" value="2017-01-01T00:00" class="catering__time">'
+              + '<input type="datetime-local" name="arrived_at" value= '+ time +' class="catering__time">'
               + '</input>'
               + '<div class= "modal-sender">'
               + '<input type="submit" name="commit" value="ケータリングを注文する" class="btn btn-success btn-lg btn-block" data-disable-with="ケータリングを注文する">'
