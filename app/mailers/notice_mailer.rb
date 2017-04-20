@@ -6,7 +6,6 @@ class NoticeMailer < ApplicationMailer
   #   en.notice_mailer.sendmail_confirm.subject
   #
   def sendmail_confirm(user, catering)
-    binding.pry
     @item = catering.menu.name
     @price = catering.menu.price
     @time = catering.arrived_at
