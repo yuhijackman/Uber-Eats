@@ -10,7 +10,7 @@ class NoticeMailer < ApplicationMailer
     @price = catering.menu.price
     @time = catering.arrived_at
     @address = catering.address
-    @message = "ケータリング注文が完了しました"
+    @message = "ご注文いただいた商品があと1時間ほどで到着いたします。"
     @name = user.name
 
     mail to: user.email

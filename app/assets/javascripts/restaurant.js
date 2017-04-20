@@ -55,8 +55,7 @@ $(function() {
     var mm = toTargetDigits(month, 2)
     var dd = toTargetDigits(day, 2)
     var hh = toTargetDigits(hours, 2)
-    var mt = toTargetDigits(minutes, 2)
-    var time = (yyyy+'-'+mm+'-'+dd+'T'+hh+':'+mt)
+    var time = (yyyy+'-'+mm+'-'+dd+'T'+hh)
     var modal = $( '<div class= "modal-menu__list__col col-md-4">'
               + '<div class= "modal-menu__list__title">'
               + '</div>'
