@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+}
+
+.outer {
+  margin: 0 auto;
+  position: relative;
+  background-color: rgba(255,255,211, 0.7);
+  background-image:url(http://4.bp.blogspot.com/-EA505T9B5m8/V8apfnjsy5I/AAAAAAAA9cE/0wC4vdej_1syGVz6mJ98wX1Gm2Y3VsdqQCLcB/s800/computer_motherboard.png);
+  background-position: center;
+  background-size: cover;
+  width: 700px;
+  height: 400px;
+}
+
+.inner {
+ position: absolute;
+ background-color: rgba(0,0,0, 0.5);
+ color: #fff;
+ width: 300px;
+ height: 100px;
+ bottom: 5%;
+ right: 7%;
+}
+
+.inner p {
+  font-size: 27px;
+  margin: 30px 5px;
+}

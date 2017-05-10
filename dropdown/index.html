@@ -1,0 +1,126 @@
+<!-- 見本
+https://dribbble.com/shots/1027783-Dropdown-Menu -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>DropdownMenu</title>
+</head>
+<body>
+
+<style>
+  /*全体の背景色を#e2deddに設定しよう*/
+  body {
+    color: #333;
+    background: #e2dedd;
+  }
+
+  /*全体の要素の幅を280pxに決定しよう*/
+  #wrapper {
+    width: 280px;
+    margin: 40px auto;
+  }
+
+  /*最初に見えるボタンを造形しよう*/
+  .top {
+    background: #f8f9f8;
+    color: #9e918d;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 4px 1px rgba(1,0,0, .4);
+  }
+
+  ul {
+    /*jsを動かした時点で表示させたい要素なのでhiddenにする*/
+    /*http://www.cssarrowplease.com/*/
+    display: none;
+    list-style-type: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.4);
+    margin: 0;
+    padding: 0;
+  }
+
+  /*anchorはinline要素なので、ブロック要素にして表示を整え、下線を消そう。*/
+  li a {
+    color: #9e918d;
+    background: #f8f9f8;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    padding: 15px 20px;
+    opacity: 0.9;
+  }
+
+  /*マウスを重ねたときの背景色と色を変化させる*/
+  li a:hover {
+    background: #e68764;
+    color: #fff;
+  }
+
+  /*アイコンを左寄せにする*/
+  .fa {
+    float: right;
+  }
+
+
+  /*arrowGeneratorで右上の角を生成する*/
+  .arrow_box {
+    position: relative;
+    background: #FBF9F8;
+  }
+
+  .arrow_box:after, .arrow_box:before {
+      bottom: 100%;
+      left: 89%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+  }
+
+  .arrow_box:after {
+    border-color: rgba(251, 249, 248, 0);
+    border-bottom-color: #FBF9F8;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+  .arrow_box:before {
+    border-color: rgba(245, 245, 245, 0);
+    border-bottom-color: #f5f5f5;
+    border-width: 10px;
+    margin-left: -8px;
+  }
+
+</style>
+
+<div id="wrapper">
+  <div class="top">PROLILE<i class="fa fa-id-card-o"></i></div>
+    <ul class="arrow_box">
+      <li><a href="#">MY LIST<i class="fa fa-check"></i></a></li>
+      <li><a href="#">STATISTICS<i class="fa fa-line-chart"></i></a></li>
+      <li><a href="#">ACCOUNT SETTINGS<i class="fa fa-wrench"></i></a></li>
+      <li><a href="#">SIGN OUT<i class="fa fa-user-times"></i></a></li>
+    </ul>
+</div>
+<script>
+// topというクラスがついた要素をクリックした時にul要素を0.3秒掛けて表示する
+  $(function(){
+    $('.top').click(function(){
+      $('ul').slideToggle(300);
+    });
+  });
+</script>
+</body>
+</html>

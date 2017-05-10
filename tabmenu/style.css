@@ -1,0 +1,42 @@
+.container {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.tab-menu {
+  /*ep*/
+  display: table;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.tab-menu > .active {
+  cursor: default;
+  background: #ec9176;
+  color: #fff;
+  font-weight: bold;
+  transition: .5s;
+  outline: none;
+}
+
+.tab-menu > li {
+  /*ep*/
+  display: table-cell;
+  cursor: pointer;
+  border: 1px solid #e7da9c;
+  padding: 10px;
+}
+
+.tab-menu > li:first-child {
+  border-right: none;
+}
+
+.tab-content > div {
+  background: #f8ede9;
+  padding: 30px;
+  letter-spacing: 3px;
+}
